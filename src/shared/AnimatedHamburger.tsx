@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import classNames from "classnames";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 export interface Item {
     icon: string;
@@ -20,25 +20,22 @@ export const AnimatedHamburger: React.FC<AnimatedHamburgerProps> = (props) => {
     }
 
     return (
-        <>
-            <nav className="menu">
-                <span className={classNames('menu-open', {'opened': open})} />
-                <label className="menu-open-button" onClick={() => setOpen(!open)}>
-                    <span className="hamburger hamburger-1" />
-                    <span className="hamburger hamburger-2" />
-                    <span className="hamburger hamburger-3" />
-                </label>
-
-                {
-                    props.items.map(item => {
-                        return (
-                            <span className="menu-item" key={item.icon} onClick={() => iconClickHandler(item.url)}>
-                                <i className={item.icon} />
-                            </span>
-                        );
-                    })
-                }
-            </nav>
-        </>
+        <nav className="menu">
+            <span className={classNames('menu-open', {'opened': open})}/>
+            <label className="menu-open-button" onClick={() => setOpen(!open)}>
+                <span className="hamburger hamburger-1"/>
+                <span className="hamburger hamburger-2"/>
+                <span className="hamburger hamburger-3"/>
+            </label>
+            {
+                props.items.map(item => {
+                    return (
+                        <span className="menu-item" key={item.icon} onClick={() => iconClickHandler(item.url)}>
+                            <i className={item.icon}/>
+                        </span>
+                    );
+                })
+            }
+        </nav>
     )
 };

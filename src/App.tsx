@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Axios from 'axios';
-import { HomePage } from './pages/home/HomePage';
-import { ContactsPage } from './pages/contacts/ContactsPage';
-import { CatalogPage } from './pages/catalog/CatalogPage';
-import { AnimatedHamburger, Item } from './shared/AnimatedHamburger';
+import React, { useEffect, useState } from "react"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Axios from "axios";
+import { HomePage } from "./pages/home/HomePage";
+import { ContactsPage } from "./pages/contacts/ContactsPage";
+import { CatalogPage } from "./pages/catalog/CatalogPage";
+import { AnimatedHamburger, Item } from "./shared/AnimatedHamburger";
 
 export const App: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
@@ -18,10 +18,8 @@ export const App: React.FC = () => {
 
   return (
       <div>
-
         <BrowserRouter>
           <AnimatedHamburger items={items} />
-
           <Switch>
             <Route path="/home">
               <HomePage />
@@ -38,7 +36,6 @@ export const App: React.FC = () => {
         {/*<pre style={{paddingTop: 250, fontSize: 20}}>
         {`<AnimatedHamburger items={items} iconClick={goto} />`}
       </pre>*/}
-
       </div>
   )
 };

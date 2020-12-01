@@ -11,9 +11,11 @@ export const CatalogListItem: FC<CatalogListItemProps> = ({ item }) => {
         window.open(`https://www.google.com/maps/place/${city}`)
     }
 
-    return <div className="col-sm-12 col-md-6 col-lg-4" key={item.id} >
-        <MapQuest height={250} city={item.city} onClick={() => openMap(item.city)}/>
-        <h4>{item.title}</h4>
-        <p>{item.address} - {item.city}</p>
-    </div>
+    return (
+        <div className="col-sm-12 col-md-6 col-lg-4" key={item.id} >
+            <MapQuest height={250} city={item.city} onClick={() => openMap(item.city)}/>
+            <h4>{item.title}</h4>
+            <p>{item.address} - {item.city}</p>
+        </div>
+    );
 };
